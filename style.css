@@ -1,0 +1,115 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg,black, black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  #game-container {
+    text-align: center;
+  }
+  
+  #board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin-top: 20px;
+  }
+  
+  .cell {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(209, 209, 209);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    cursor: pointer;
+    
+  }
+  
+  .cell:hover {
+    background-color: #e0e0e0;
+    width: 102px;
+    height: 100px;
+    margin-right: 5px;
+    transition: width 0.1s, height 0.2s, margin 0.2s;
+    background: linear-gradient(45deg, rgb(208,57,246), rgb(44,237,248));
+
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    font-family: fantasy;
+    font-weight: 500;
+    color: rgb(69, 179, 186);
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 20px;
+    border-radius: 20px;
+    background: linear-gradient(45deg, rgb(5, 255, 234), rgb(248,2,255));
+  }
+  button:hover {
+    padding: 12px 22px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 24px;
+    font-family: fantasy;
+    font-weight: 20;
+    color:rgb(47,228,153);
+    transition: padding 0.1s, margin 0.1s;
+  }
+  
+  button:active {
+    padding: 12px 22px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 24px;
+    font-family: fantasy;
+    font-weight: 20;
+    color:rgb(217,140,140);
+    background: linear-gradient(45deg,  rgb(248,2,255),rgb(5, 255, 234));
+    transition: padding 0.1s, margin 0.1s;
+
+  }
+  
+  .cell.x {
+    color: rgb(8, 8, 8);
+  }
+  
+  .cell.o {
+    color: rgb(12, 12, 12);
+  }
+  
+  /* Animation for winning cells */
+  @keyframes win-animation {
+    0% { color: rgb(150, 236, 12);
+        background: linear-gradient(50deg,rgb(0, 255, 229), black);
+  }
+    50% {color: rgb(106, 227, 31); 
+        background: linear-gradient(50deg,rgb(0, 255, 229), black);
+   }
+    100% { color: rgb(80, 241, 9);
+        background: linear-gradient(50deg,rgb(0, 247, 200), black);
+       }
+  }
+  
+  .win-cell {
+    animation: win-animation 1.5s ease-in-out infinite;
+  }
+
+  .winImg{
+    background:linear-gradient(45deg, rgb(10, 68, 90), rgb(9, 9, 9)); 
+    margin: 20px;
+    display:none;
+   
+  }
